@@ -48,7 +48,7 @@ struct i2c_device which_ldo_chip[] = {
 #define USE_CONTROL_ENGPIO
 /***
  * finger also use this ldo, it will use pinctrl;
- * path is kernel/msm-5.4/driver/regulator/wl2868c.c
+ * path is driver/regulator/wl2868c.c
 ***/
 static struct i2c_client *wl2868c_i2c_client;
 #ifdef USE_CONTROL_ENGPIO
