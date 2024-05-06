@@ -1686,15 +1686,12 @@ static void sugov_exit(struct cpufreq_policy *policy)
 
 	count = gov_attr_set_put(&tunables->attr_set, &sg_policy->tunables_hook);
 	policy->governor_data = NULL;
-<<<<<<< HEAD
 	if (!count) {
 		sugov_tunables_save(policy, tunables);
 		sugov_tunables_free(tunables);
 	}
-=======
 	if (!count)
 		sugov_clear_global_tunables();
->>>>>>> 67c98e023135 (cpufreq: schedutil: Use kobject release() method to free sugov_tunables)
 
 	mutex_unlock(&global_tunables_lock);
 
