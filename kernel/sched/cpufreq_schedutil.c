@@ -1536,7 +1536,6 @@ static void sugov_tunables_save(struct cpufreq_policy *policy,
 #endif
 }
 
-static void sugov_tunables_free(struct sugov_tunables *tunables)
 static void sugov_clear_global_tunables(void)
 {
 	if (!have_governor_per_policy())
@@ -1688,7 +1687,6 @@ static void sugov_exit(struct cpufreq_policy *policy)
 	policy->governor_data = NULL;
 	if (!count) {
 		sugov_tunables_save(policy, tunables);
-		sugov_tunables_free(tunables);
 	}
 	if (!count)
 		sugov_clear_global_tunables();
